@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Pol\\Documents\\GitHub\\Consultor-trucades-a-la-xarxa-RESCAT\\Consultor-trucades-a-la-xarxa-RESCAT\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF1CEFA7-DCFA-4BE6-852A-49BD553E5F70}|Consultor-trucades-a-la-xarxa-RESCAT\\Consultor-trucades-a-la-xarxa-RESCAT.csproj|c:\\users\\pol\\documents\\github\\consultor-trucades-a-la-xarxa-rescat\\consultor-trucades-a-la-xarxa-rescat\\consultor-trucades-a-la-xarxa-rescat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF1CEFA7-DCFA-4BE6-852A-49BD553E5F70}|Consultor-trucades-a-la-xarxa-RESCAT\\Consultor-trucades-a-la-xarxa-RESCAT.csproj|solutionrelative:consultor-trucades-a-la-xarxa-rescat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\Consultor-trucades-a-la-xarxa-RESCAT\\Consultor-trucades-a-la-xarxa-RESCAT\\Consultor-trucades-a-la-xarxa-RESCAT\\Form1.cs",
+              "RelativeDocumentMoniker": "Consultor-trucades-a-la-xarxa-RESCAT\\Form1.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\Consultor-trucades-a-la-xarxa-RESCAT\\Consultor-trucades-a-la-xarxa-RESCAT\\Consultor-trucades-a-la-xarxa-RESCAT\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Consultor-trucades-a-la-xarxa-RESCAT\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T16:23:45.01Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
