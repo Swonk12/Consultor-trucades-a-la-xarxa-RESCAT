@@ -1,0 +1,10 @@
+C:\Users\Pol\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\bin\Debug\Consultor-trucades-a-la-xarxa-RESCAT.exe.config
+C:\Users\Pol\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\bin\Debug\Consultor-trucades-a-la-xarxa-RESCAT.exe
+C:\Users\Pol\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\bin\Debug\Consultor-trucades-a-la-xarxa-RESCAT.pdb
+C:\Users\Pol\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\obj\Debug\Consultor-trucades-a-la-xarxa-RESCAT.csproj.AssemblyReference.cache
+C:\Users\Pol\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\obj\Debug\Consultor_trucades_a_la_xarxa_RESCAT.FrmMain.resources
+C:\Users\Pol\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\obj\Debug\Consultor_trucades_a_la_xarxa_RESCAT.Properties.Resources.resources
+C:\Users\Pol\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\obj\Debug\Consultor-trucades-a-la-xarxa-RESCAT.csproj.GenerateResource.cache
+C:\Users\Pol\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\obj\Debug\Consultor-trucades-a-la-xarxa-RESCAT.csproj.CoreCompileInputs.cache
+C:\Users\Pol\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\obj\Debug\Consultor-trucades-a-la-xarxa-RESCAT.exe
+C:\Users\Pol\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\obj\Debug\Consultor-trucades-a-la-xarxa-RESCAT.pdb
