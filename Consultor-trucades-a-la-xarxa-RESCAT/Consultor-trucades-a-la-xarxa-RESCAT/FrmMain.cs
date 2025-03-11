@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Consultor_trucades_a_la_xarxa_RESCAT.FORMULARIOS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -19,6 +21,9 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
 
         private string fileName;
 
+        List <string> any2 = new List<string>();
+        FrmGrafic fGrafic;
+
         public FrmMain()
         {
             InitializeComponent();
@@ -28,6 +33,7 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
         {
             chkFiltre.Enabled = false;
             btExportar.Enabled = false;
+            gbButtons.Enabled = false;
             cambiEstatGP();
 
             if (chkFiltreDades.Checked == true)
@@ -111,6 +117,7 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
                 gpRuta.Enabled = false;
 
                 // Habilitem el check de filtrar tot o res
+                gbButtons.Enabled = true;
                 chkFiltre.Enabled = true;
 
                 btExportar.Enabled = true;
@@ -391,6 +398,184 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
                 }            
                 xDoc.Save("recollida.xml");
                 MessageBox.Show("El archivo 'recollida.xml' se ha generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void pbCalculadora_Click(object sender, EventArgs e)
+        {
+            Process[] proces = Process.GetProcessesByName("Calculator");
+
+            if (proces.Length == 0)
+            {
+                Process.Start("calc.exe");
+            }
+        }
+
+        private void pbMaps_Click(object sender, EventArgs e)
+        {
+            string url = "https://analisi.transparenciacatalunya.cat/Seguretat/Disponibilitat-i-trucades-a-la-xarxa-RESCAT/93rs-9s9d/about_data";
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
+
+        private void btMit_Click(object sender, EventArgs e)
+        {
+            if (dgDades.Rows.Count == 0)
+            {
+                MessageBox.Show("Falta agregar datos a la tabla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                XmlDocument xDoc = new XmlDocument();
+                XmlDeclaration xDeclaracio = xDoc.CreateXmlDeclaration("1.0", "UTF-8", null);
+                xDoc.AppendChild(xDeclaracio);
+
+                XPathDocument document = new XPathDocument(fileName);
+                XPathNavigator navegador = document.CreateNavigator();
+                XPathNodeIterator cursor = null;
+                XPathExpression expr = navegador.Compile("//response/row/row");
+
+                XmlElement root = xDoc.CreateElement("Mitjes");
+                xDoc.AppendChild(root);
+
+                expr.AddSort("row", XmlSortOrder.Ascending, XmlCaseOrder.None, "", XmlDataType.Text);
+
+                XmlElement mitjCua = xDoc.CreateElement("MitjaCua");
+                mitjCua.InnerText = lbMitjaCua.Text;
+                root.AppendChild(mitjCua);
+
+                XmlElement mitjTrucades = xDoc.CreateElement("MitjTrucades");
+                mitjTrucades.InnerText = lbMitjaTrucades.Text;
+                root.AppendChild(mitjTrucades);
+
+                XmlElement mitjTBS = xDoc.CreateElement("MitjTBS");
+                mitjTBS.InnerText = lbTBS.Text;
+                root.AppendChild(mitjTBS);
+
+                XmlElement mitjDOTS = xDoc.CreateElement("MitjDOTS");
+                mitjDOTS.InnerText = lbDOTS.Text;
+                root.AppendChild(mitjDOTS);
+
+                XmlElement mitjDXT = xDoc.CreateElement("MitjOXT");
+                mitjDXT.InnerText = lbDXT.Text;
+                root.AppendChild(mitjDXT);
+
+                xDoc.Save("mitjes.xml");
+                MessageBox.Show("El archivo 'any.xml' se ha generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btAnys_Click(object sender, EventArgs e)
+        {
+            XmlDocument xDoc = new XmlDocument();
+            XmlDeclaration xDeclaracio = xDoc.CreateXmlDeclaration("1.0", "UTF-8", null);
+            xDoc.AppendChild(xDeclaracio);
+
+            XPathDocument document = new XPathDocument(fileName);
+            XPathNavigator navegador = document.CreateNavigator();
+            XPathNodeIterator cursor = null;
+            XPathExpression expr = navegador.Compile("//response/row/row");
+
+            XmlElement root = xDoc.CreateElement("Anys");
+            xDoc.AppendChild(root);
+
+            expr.AddSort("row", XmlSortOrder.Ascending, XmlCaseOrder.None, "", XmlDataType.Text);
+            cursor = navegador.Select(expr);
+            any2.Clear();
+            foreach (XPathNavigator tut in cursor)
+            {
+                string data = tut.SelectSingleNode("data")?.Value;
+                DateTime dataConvert = DateTime.Parse(data);
+                string dataTallada = dataConvert.ToString("yyyy");
+
+                if (!any2.Contains(dataTallada))
+                {
+                    any2.Add(dataTallada);
+                    XmlElement anyXML = xDoc.CreateElement("data");
+                    anyXML.InnerText = dataTallada;
+                    root.AppendChild(anyXML);
+                }
+            }
+            xDoc.Save("any.xml");
+            MessageBox.Show("El archivo 'any.xml' se ha generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btGrafic_Click(object sender, EventArgs e)
+        {
+            if (dgDades.Rows.Count == 0)
+            {
+                MessageBox.Show("Falta agregar datos a la tabla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //List<string> etiquetasX = new List<string>();
+                //List<double> valoresY = new List<double>();
+
+                //XPathDocument document = new XPathDocument(fileName);
+                //XPathNavigator navegador = document.CreateNavigator();
+                //XPathNodeIterator cursor = null;
+                //XPathExpression expr = navegador.Compile("//response/row/row");
+
+
+                //expr.AddSort("row", XmlSortOrder.Ascending, XmlCaseOrder.None, "", XmlDataType.Text);
+                //cursor = navegador.Select(expr);
+                //valoresY.Clear();
+                //foreach (XPathNavigator tut in cursor)
+                //{
+                //    string data = tut.SelectSingleNode("data")?.Value;
+                //    DateTime dataConvert = DateTime.Parse(data);
+                //    string dataTallada = dataConvert.ToString("yyyy");
+
+                //    if (!etiquetasX.Contains(dataTallada))
+                //    {
+                //        etiquetasX.Add(dataTallada);
+                //        valoresY.Add(((double)navegador.Evaluate($"AVG(//data LIKE '{data}%']/temps_mig_en_cua_segons)")));
+                //    }
+                //}
+
+                List<string> etiquetasX = new List<string>();
+                List<double> valoresY = new List<double>();
+
+                XPathDocument document = new XPathDocument(fileName);
+                XPathNavigator navegador = document.CreateNavigator();
+                XPathNodeIterator cursor = navegador.Select("//response/row/row");
+
+                valoresY.Clear();
+
+                Dictionary<string, List<double>> datosAgrupados = new Dictionary<string, List<double>>();
+
+                foreach (XPathNavigator tut in cursor)
+                {
+                    string data = tut.SelectSingleNode("data")?.Value;
+                    string temps = tut.SelectSingleNode("temps_mig_en_cua_segons")?.Value;
+
+                    if (DateTime.TryParse(data, out DateTime dataConvert) && double.TryParse(temps, NumberStyles.Any, CultureInfo.InvariantCulture, out double tempsValor))
+                    {
+                        string dataTallada = dataConvert.ToString("yyyy"); // Extraer solo el año
+
+                        if (!datosAgrupados.ContainsKey(dataTallada))
+                        {
+                            datosAgrupados[dataTallada] = new List<double>();
+                        }
+
+                        datosAgrupados[dataTallada].Add(tempsValor);
+                    }
+                }
+
+                // Calcular el promedio por año
+                foreach (var entry in datosAgrupados)
+                {
+                    etiquetasX.Add(entry.Key);
+                    valoresY.Add(entry.Value.Count > 0 ? entry.Value.Average() : 0);
+                }
+
+                fGrafic = new FrmGrafic(etiquetasX, valoresY);
+                fGrafic.Name = "Grafico";
+                fGrafic.Show();
+                fGrafic.Activate();
             }
         }
     }

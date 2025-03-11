@@ -18,3 +18,4 @@ C:\Users\Marc\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-tr
 C:\Users\Marc\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\obj\Debug\Consultor-trucades-a-la-xarxa-RESCAT.csproj.CoreCompileInputs.cache
 C:\Users\Marc\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\obj\Debug\Consultor-trucades-a-la-xarxa-RESCAT.exe
 C:\Users\Marc\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\obj\Debug\Consultor-trucades-a-la-xarxa-RESCAT.pdb
+C:\Users\Marc\Documents\GitHub\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\Consultor-trucades-a-la-xarxa-RESCAT\obj\Debug\Consultor_trucades_a_la_xarxa_RESCAT.FORMULARIOS.FrmGrafic.resources

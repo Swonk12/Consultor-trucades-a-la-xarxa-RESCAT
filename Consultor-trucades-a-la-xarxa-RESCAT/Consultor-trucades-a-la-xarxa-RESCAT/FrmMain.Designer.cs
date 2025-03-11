@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.GpDates = new System.Windows.Forms.GroupBox();
             this.DTend = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
@@ -68,6 +69,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nupMax = new System.Windows.Forms.NumericUpDown();
             this.nupMin = new System.Windows.Forms.NumericUpDown();
+            this.gbButtons = new System.Windows.Forms.GroupBox();
+            this.btAnys = new System.Windows.Forms.Button();
+            this.btMit = new System.Windows.Forms.Button();
+            this.btGrafic = new System.Windows.Forms.Button();
+            this.pbMaps = new System.Windows.Forms.PictureBox();
+            this.pbCalculadora = new System.Windows.Forms.PictureBox();
             this.GpDates.SuspendLayout();
             this.gpInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDades)).BeginInit();
@@ -76,6 +83,9 @@
             this.GpEspera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupMin)).BeginInit();
+            this.gbButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMaps)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCalculadora)).BeginInit();
             this.SuspendLayout();
             // 
             // GpDates
@@ -402,7 +412,7 @@
             this.chkFiltre.AutoSize = true;
             this.chkFiltre.Checked = true;
             this.chkFiltre.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkFiltre.Location = new System.Drawing.Point(299, 479);
+            this.chkFiltre.Location = new System.Drawing.Point(299, 486);
             this.chkFiltre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkFiltre.Name = "chkFiltre";
             this.chkFiltre.Size = new System.Drawing.Size(133, 20);
@@ -498,11 +508,84 @@
             this.nupMin.Size = new System.Drawing.Size(55, 22);
             this.nupMin.TabIndex = 0;
             // 
+            // gbButtons
+            // 
+            this.gbButtons.Controls.Add(this.btGrafic);
+            this.gbButtons.Controls.Add(this.pbMaps);
+            this.gbButtons.Controls.Add(this.pbCalculadora);
+            this.gbButtons.Controls.Add(this.btAnys);
+            this.gbButtons.Controls.Add(this.btMit);
+            this.gbButtons.Location = new System.Drawing.Point(12, 511);
+            this.gbButtons.Name = "gbButtons";
+            this.gbButtons.Size = new System.Drawing.Size(1124, 100);
+            this.gbButtons.TabIndex = 11;
+            this.gbButtons.TabStop = false;
+            this.gbButtons.Text = "Aditional buttons";
+            // 
+            // btAnys
+            // 
+            this.btAnys.BackColor = System.Drawing.Color.Peru;
+            this.btAnys.Location = new System.Drawing.Point(220, 26);
+            this.btAnys.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btAnys.Name = "btAnys";
+            this.btAnys.Size = new System.Drawing.Size(168, 62);
+            this.btAnys.TabIndex = 9;
+            this.btAnys.Text = "Anys Recollits";
+            this.btAnys.UseVisualStyleBackColor = false;
+            this.btAnys.Click += new System.EventHandler(this.btAnys_Click);
+            // 
+            // btMit
+            // 
+            this.btMit.BackColor = System.Drawing.Color.OrangeRed;
+            this.btMit.Location = new System.Drawing.Point(15, 26);
+            this.btMit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btMit.Name = "btMit";
+            this.btMit.Size = new System.Drawing.Size(168, 62);
+            this.btMit.TabIndex = 8;
+            this.btMit.Text = "Mitjes";
+            this.btMit.UseVisualStyleBackColor = false;
+            this.btMit.Click += new System.EventHandler(this.btMit_Click);
+            // 
+            // btGrafic
+            // 
+            this.btGrafic.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btGrafic.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btGrafic.Location = new System.Drawing.Point(415, 12);
+            this.btGrafic.Name = "btGrafic";
+            this.btGrafic.Size = new System.Drawing.Size(631, 82);
+            this.btGrafic.TabIndex = 12;
+            this.btGrafic.Text = "Grafic";
+            this.btGrafic.UseVisualStyleBackColor = false;
+            this.btGrafic.Click += new System.EventHandler(this.btGrafic_Click);
+            // 
+            // pbMaps
+            // 
+            this.pbMaps.Image = ((System.Drawing.Image)(resources.GetObject("pbMaps.Image")));
+            this.pbMaps.Location = new System.Drawing.Point(1064, 11);
+            this.pbMaps.Name = "pbMaps";
+            this.pbMaps.Size = new System.Drawing.Size(52, 42);
+            this.pbMaps.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMaps.TabIndex = 11;
+            this.pbMaps.TabStop = false;
+            this.pbMaps.Click += new System.EventHandler(this.pbMaps_Click);
+            // 
+            // pbCalculadora
+            // 
+            this.pbCalculadora.Image = global::Consultor_trucades_a_la_xarxa_RESCAT.Properties.Resources.calulate;
+            this.pbCalculadora.Location = new System.Drawing.Point(1063, 54);
+            this.pbCalculadora.Name = "pbCalculadora";
+            this.pbCalculadora.Size = new System.Drawing.Size(52, 42);
+            this.pbCalculadora.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCalculadora.TabIndex = 10;
+            this.pbCalculadora.TabStop = false;
+            this.pbCalculadora.Click += new System.EventHandler(this.pbCalculadora_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 503);
+            this.ClientSize = new System.Drawing.Size(1148, 635);
+            this.Controls.Add(this.gbButtons);
             this.Controls.Add(this.GpEspera);
             this.Controls.Add(this.btExportar);
             this.Controls.Add(this.chkFiltreDades);
@@ -530,6 +613,9 @@
             this.GpEspera.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupMin)).EndInit();
+            this.gbButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMaps)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCalculadora)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,6 +662,12 @@
         private System.Windows.Forms.NumericUpDown nupMax;
         private System.Windows.Forms.NumericUpDown nupMin;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox gbButtons;
+        private System.Windows.Forms.Button btAnys;
+        private System.Windows.Forms.Button btMit;
+        private System.Windows.Forms.PictureBox pbCalculadora;
+        private System.Windows.Forms.PictureBox pbMaps;
+        private System.Windows.Forms.Button btGrafic;
     }
 }
 
