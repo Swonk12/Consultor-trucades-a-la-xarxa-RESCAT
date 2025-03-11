@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GpDates = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DTend = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DTini = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.gpInfo = new System.Windows.Forms.GroupBox();
             this.lbDXT = new System.Windows.Forms.Label();
@@ -64,64 +64,68 @@
             this.chkFiltreDades = new System.Windows.Forms.CheckBox();
             this.btExportar = new System.Windows.Forms.Button();
             this.GpEspera = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nupMax = new System.Windows.Forms.NumericUpDown();
+            this.nupMin = new System.Windows.Forms.NumericUpDown();
             this.GpDates.SuspendLayout();
             this.gpInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDades)).BeginInit();
             this.gpRuta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupAny)).BeginInit();
             this.GpEspera.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupMin)).BeginInit();
             this.SuspendLayout();
             // 
             // GpDates
             // 
-            this.GpDates.Controls.Add(this.dateTimePicker2);
+            this.GpDates.Controls.Add(this.DTend);
             this.GpDates.Controls.Add(this.label17);
-            this.GpDates.Controls.Add(this.dateTimePicker1);
+            this.GpDates.Controls.Add(this.DTini);
             this.GpDates.Controls.Add(this.label7);
-            this.GpDates.Location = new System.Drawing.Point(710, 12);
+            this.GpDates.Location = new System.Drawing.Point(709, 12);
+            this.GpDates.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GpDates.Name = "GpDates";
+            this.GpDates.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GpDates.Size = new System.Drawing.Size(248, 84);
             this.GpDates.TabIndex = 0;
             this.GpDates.TabStop = false;
             this.GpDates.Text = "Rang Dates";
             // 
-            // dateTimePicker2
+            // DTend
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(113, 52);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(101, 22);
-            this.dateTimePicker2.TabIndex = 3;
+            this.DTend.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTend.Location = new System.Drawing.Point(113, 52);
+            this.DTend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DTend.Name = "DTend";
+            this.DTend.Size = new System.Drawing.Size(101, 22);
+            this.DTend.TabIndex = 3;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(6, 52);
+            this.label17.Location = new System.Drawing.Point(5, 52);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(82, 16);
             this.label17.TabIndex = 2;
             this.label17.Text = "Data Final:";
             // 
-            // dateTimePicker1
+            // DTini
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(113, 21);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(101, 22);
-            this.dateTimePicker1.TabIndex = 1;
+            this.DTini.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTini.Location = new System.Drawing.Point(113, 21);
+            this.DTini.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DTini.Name = "DTini";
+            this.DTini.Size = new System.Drawing.Size(101, 22);
+            this.DTini.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 24);
+            this.label7.Location = new System.Drawing.Point(5, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 16);
             this.label7.TabIndex = 0;
@@ -140,7 +144,9 @@
             this.gpInfo.Controls.Add(this.lbMitjaCua);
             this.gpInfo.Controls.Add(this.lbdada);
             this.gpInfo.Location = new System.Drawing.Point(12, 74);
+            this.gpInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gpInfo.Name = "gpInfo";
+            this.gpInfo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gpInfo.Size = new System.Drawing.Size(501, 100);
             this.gpInfo.TabIndex = 3;
             this.gpInfo.TabStop = false;
@@ -206,7 +212,7 @@
             // lbMitjaTrucades
             // 
             this.lbMitjaTrucades.AutoSize = true;
-            this.lbMitjaTrucades.Location = new System.Drawing.Point(154, 66);
+            this.lbMitjaTrucades.Location = new System.Drawing.Point(155, 66);
             this.lbMitjaTrucades.Name = "lbMitjaTrucades";
             this.lbMitjaTrucades.Size = new System.Drawing.Size(73, 16);
             this.lbMitjaTrucades.TabIndex = 4;
@@ -225,7 +231,7 @@
             // lbMitjaCua
             // 
             this.lbMitjaCua.AutoSize = true;
-            this.lbMitjaCua.Location = new System.Drawing.Point(110, 32);
+            this.lbMitjaCua.Location = new System.Drawing.Point(109, 32);
             this.lbMitjaCua.Name = "lbMitjaCua";
             this.lbMitjaCua.Size = new System.Drawing.Size(38, 16);
             this.lbMitjaCua.TabIndex = 1;
@@ -246,8 +252,8 @@
             this.dgDades.AllowUserToAddRows = false;
             this.dgDades.AllowUserToDeleteRows = false;
             this.dgDades.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgDades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgDades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgDades.ColumnHeadersHeight = 29;
             this.dgDades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data,
@@ -258,6 +264,7 @@
             this.disponibilitatDots,
             this.disponibilitatDxt});
             this.dgDades.Location = new System.Drawing.Point(12, 185);
+            this.dgDades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgDades.Name = "dgDades";
             this.dgDades.ReadOnly = true;
             this.dgDades.RowHeadersWidth = 51;
@@ -333,7 +340,9 @@
             this.gpRuta.Controls.Add(this.btExaminar);
             this.gpRuta.Controls.Add(this.tbRuta);
             this.gpRuta.Location = new System.Drawing.Point(12, 6);
+            this.gpRuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gpRuta.Name = "gpRuta";
+            this.gpRuta.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gpRuta.Size = new System.Drawing.Size(692, 58);
             this.gpRuta.TabIndex = 5;
             this.gpRuta.TabStop = false;
@@ -343,6 +352,7 @@
             // 
             this.btExaminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btExaminar.Location = new System.Drawing.Point(571, 17);
+            this.btExaminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btExaminar.Name = "btExaminar";
             this.btExaminar.Size = new System.Drawing.Size(116, 31);
             this.btExaminar.TabIndex = 1;
@@ -352,7 +362,8 @@
             // 
             // tbRuta
             // 
-            this.tbRuta.Location = new System.Drawing.Point(6, 21);
+            this.tbRuta.Location = new System.Drawing.Point(5, 21);
+            this.tbRuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRuta.Name = "tbRuta";
             this.tbRuta.Size = new System.Drawing.Size(547, 22);
             this.tbRuta.TabIndex = 0;
@@ -370,6 +381,7 @@
             // nupAny
             // 
             this.nupAny.Location = new System.Drawing.Point(812, 146);
+            this.nupAny.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nupAny.Maximum = new decimal(new int[] {
             2026,
             0,
@@ -391,6 +403,7 @@
             this.chkFiltre.Checked = true;
             this.chkFiltre.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkFiltre.Location = new System.Drawing.Point(299, 479);
+            this.chkFiltre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkFiltre.Name = "chkFiltre";
             this.chkFiltre.Size = new System.Drawing.Size(133, 20);
             this.chkFiltre.TabIndex = 6;
@@ -401,7 +414,8 @@
             // btCerca
             // 
             this.btCerca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btCerca.Location = new System.Drawing.Point(968, 24);
+            this.btCerca.Location = new System.Drawing.Point(968, 25);
+            this.btCerca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btCerca.Name = "btCerca";
             this.btCerca.Size = new System.Drawing.Size(168, 62);
             this.btCerca.TabIndex = 7;
@@ -412,7 +426,8 @@
             // chkFiltreDades
             // 
             this.chkFiltreDades.AutoSize = true;
-            this.chkFiltreDades.Location = new System.Drawing.Point(730, 105);
+            this.chkFiltreDades.Location = new System.Drawing.Point(731, 105);
+            this.chkFiltreDades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkFiltreDades.Name = "chkFiltreDades";
             this.chkFiltreDades.Size = new System.Drawing.Size(224, 20);
             this.chkFiltreDades.TabIndex = 8;
@@ -424,40 +439,37 @@
             // 
             this.btExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btExportar.Location = new System.Drawing.Point(968, 106);
+            this.btExportar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btExportar.Name = "btExportar";
             this.btExportar.Size = new System.Drawing.Size(168, 62);
             this.btExportar.TabIndex = 9;
             this.btExportar.Text = "EXPORTAR";
             this.btExportar.UseVisualStyleBackColor = false;
+            this.btExportar.Click += new System.EventHandler(this.btExportar_Click);
             // 
             // GpEspera
             // 
             this.GpEspera.Controls.Add(this.label2);
             this.GpEspera.Controls.Add(this.label1);
-            this.GpEspera.Controls.Add(this.numericUpDown2);
-            this.GpEspera.Controls.Add(this.numericUpDown1);
+            this.GpEspera.Controls.Add(this.nupMax);
+            this.GpEspera.Controls.Add(this.nupMin);
             this.GpEspera.Location = new System.Drawing.Point(524, 79);
+            this.GpEspera.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GpEspera.Name = "GpEspera";
+            this.GpEspera.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GpEspera.Size = new System.Drawing.Size(180, 95);
             this.GpEspera.TabIndex = 10;
             this.GpEspera.TabStop = false;
             this.GpEspera.Text = "Temps Espera";
             // 
-            // numericUpDown1
+            // label2
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(104, 27);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(55, 22);
-            this.numericUpDown1.TabIndex = 0;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.DecimalPlaces = 2;
-            this.numericUpDown2.Location = new System.Drawing.Point(104, 63);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(55, 22);
-            this.numericUpDown2.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Cua Maxima:";
             // 
             // label1
             // 
@@ -468,14 +480,23 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Cua Minima:";
             // 
-            // label2
+            // nupMax
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Cua Maxima:";
+            this.nupMax.DecimalPlaces = 2;
+            this.nupMax.Location = new System.Drawing.Point(104, 63);
+            this.nupMax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nupMax.Name = "nupMax";
+            this.nupMax.Size = new System.Drawing.Size(55, 22);
+            this.nupMax.TabIndex = 1;
+            // 
+            // nupMin
+            // 
+            this.nupMin.DecimalPlaces = 2;
+            this.nupMin.Location = new System.Drawing.Point(104, 27);
+            this.nupMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nupMin.Name = "nupMin";
+            this.nupMin.Size = new System.Drawing.Size(55, 22);
+            this.nupMin.TabIndex = 0;
             // 
             // FrmMain
             // 
@@ -493,6 +514,7 @@
             this.Controls.Add(this.nupAny);
             this.Controls.Add(this.lbAny);
             this.Controls.Add(this.GpDates);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmMain";
             this.Text = "Disponibilitat i trucades a la xarxa RESCAT";
             this.Load += new System.EventHandler(this.FrmMain_Load);
@@ -506,8 +528,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupAny)).EndInit();
             this.GpEspera.ResumeLayout(false);
             this.GpEspera.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupMin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,12 +543,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbMitjaCua;
         private System.Windows.Forms.Label lbdada;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DTini;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbTBS;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker DTend;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lbDXT;
         private System.Windows.Forms.Label label16;
@@ -551,8 +573,8 @@
         private System.Windows.Forms.Button btExportar;
         private System.Windows.Forms.GroupBox GpEspera;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nupMax;
+        private System.Windows.Forms.NumericUpDown nupMin;
         private System.Windows.Forms.Label label2;
     }
 }
