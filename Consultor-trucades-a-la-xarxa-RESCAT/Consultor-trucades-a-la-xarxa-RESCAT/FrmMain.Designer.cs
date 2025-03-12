@@ -70,11 +70,11 @@
             this.nupMax = new System.Windows.Forms.NumericUpDown();
             this.nupMin = new System.Windows.Forms.NumericUpDown();
             this.gbButtons = new System.Windows.Forms.GroupBox();
-            this.btAnys = new System.Windows.Forms.Button();
-            this.btMit = new System.Windows.Forms.Button();
             this.btGrafic = new System.Windows.Forms.Button();
             this.pbMaps = new System.Windows.Forms.PictureBox();
             this.pbCalculadora = new System.Windows.Forms.PictureBox();
+            this.btAnys = new System.Windows.Forms.Button();
+            this.btMit = new System.Windows.Forms.Button();
             this.GpDates.SuspendLayout();
             this.gpInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDades)).BeginInit();
@@ -522,30 +522,6 @@
             this.gbButtons.TabStop = false;
             this.gbButtons.Text = "Aditional buttons";
             // 
-            // btAnys
-            // 
-            this.btAnys.BackColor = System.Drawing.Color.Peru;
-            this.btAnys.Location = new System.Drawing.Point(220, 26);
-            this.btAnys.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btAnys.Name = "btAnys";
-            this.btAnys.Size = new System.Drawing.Size(168, 62);
-            this.btAnys.TabIndex = 9;
-            this.btAnys.Text = "Anys Recollits";
-            this.btAnys.UseVisualStyleBackColor = false;
-            this.btAnys.Click += new System.EventHandler(this.btAnys_Click);
-            // 
-            // btMit
-            // 
-            this.btMit.BackColor = System.Drawing.Color.OrangeRed;
-            this.btMit.Location = new System.Drawing.Point(15, 26);
-            this.btMit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btMit.Name = "btMit";
-            this.btMit.Size = new System.Drawing.Size(168, 62);
-            this.btMit.TabIndex = 8;
-            this.btMit.Text = "Mitjes";
-            this.btMit.UseVisualStyleBackColor = false;
-            this.btMit.Click += new System.EventHandler(this.btMit_Click);
-            // 
             // btGrafic
             // 
             this.btGrafic.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -579,6 +555,30 @@
             this.pbCalculadora.TabIndex = 10;
             this.pbCalculadora.TabStop = false;
             this.pbCalculadora.Click += new System.EventHandler(this.pbCalculadora_Click);
+            // 
+            // btAnys
+            // 
+            this.btAnys.BackColor = System.Drawing.Color.Peru;
+            this.btAnys.Location = new System.Drawing.Point(220, 26);
+            this.btAnys.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btAnys.Name = "btAnys";
+            this.btAnys.Size = new System.Drawing.Size(168, 62);
+            this.btAnys.TabIndex = 9;
+            this.btAnys.Text = "Anys Recollits";
+            this.btAnys.UseVisualStyleBackColor = false;
+            this.btAnys.Click += new System.EventHandler(this.btAnys_Click);
+            // 
+            // btMit
+            // 
+            this.btMit.BackColor = System.Drawing.Color.OrangeRed;
+            this.btMit.Location = new System.Drawing.Point(15, 26);
+            this.btMit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btMit.Name = "btMit";
+            this.btMit.Size = new System.Drawing.Size(168, 62);
+            this.btMit.TabIndex = 8;
+            this.btMit.Text = "Mitjes";
+            this.btMit.UseVisualStyleBackColor = false;
+            this.btMit.Click += new System.EventHandler(this.btMit_Click);
             // 
             // FrmMain
             // 
