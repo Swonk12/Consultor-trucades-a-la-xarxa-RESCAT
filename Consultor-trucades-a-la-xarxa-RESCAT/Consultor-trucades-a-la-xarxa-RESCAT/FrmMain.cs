@@ -22,6 +22,7 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
         private string fileName;
 
         List <string> any2 = new List<string>();
+        List <int> anyInt = new List<int>();
         FrmGrafic fGrafic;
 
         public FrmMain()
@@ -92,6 +93,7 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
             cursor = navegador.Select(expr);
             foreach (XPathNavigator row in cursor)
             {
+
                 string data = row.SelectSingleNode("data")?.Value;
                 DateTime dataConvert = DateTime.Parse(data);
                 string dataTallada = dataConvert.ToString("yyyy-MM");
@@ -132,12 +134,28 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
             XPathDocument document = new XPathDocument(fileName);
             XPathNavigator navegador = document.CreateNavigator();
 
+            int contador = 0;
+            double mitjaCua = 0;
+            int TrucadesAny = 0;
+            double tbs = 0, dots = 0, dxt = 0;
+
             XPathNodeIterator cursor = null;
             XPathExpression expr = navegador.Compile("//row//row");
             expr.AddSort("data", XmlSortOrder.Ascending, XmlCaseOrder.None, "", XmlDataType.Text);
             cursor = navegador.Select(expr);
+            any2.Clear();
             foreach (XPathNavigator row in cursor)
             {
+                string data2 = row.SelectSingleNode("data")?.Value;
+                DateTime dataConvert2 = DateTime.Parse(data2);
+                string dataTallada2 = dataConvert2.ToString("yyyy");
+
+                if (!any2.Contains(dataTallada2))
+                {
+                    any2.Add(dataTallada2);
+                }
+
+                contador = contador + 1;
                 string data = row.SelectSingleNode("data")?.Value;
                 DateTime dataConvert = DateTime.Parse(data);
                 string dataTallada = dataConvert.ToString("yyyy-MM");
@@ -149,9 +167,44 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
                 string disponibilitatDots = row.SelectSingleNode("disponibilitat_dots_1")?.Value;
                 string disponibilitatDxt = row.SelectSingleNode("disponibilitat_tbs")?.Value;
 
+                double Cua = Convert.ToDouble(TempsMigCua, CultureInfo.InvariantCulture);
+                mitjaCua = mitjaCua + Cua;
+
+                TrucadesAny = TrucadesAny + int.Parse(NombreTrucades);
+
+                tbs += Convert.ToDouble(disponibilitatTbs, CultureInfo.InvariantCulture);
+                dots += Convert.ToDouble(disponibilitatDots, CultureInfo.InvariantCulture);
+                dxt += Convert.ToDouble(disponibilitatDxt, CultureInfo.InvariantCulture);
+
                 dgDades.Rows.Add(dataTallada, NombreTrucades, TempsTrucades, TempsMigCua, disponibilitatTbs, disponibilitatDots, disponibilitatDxt);
 
+                lbMitjaCua.Text = contador > 0 ? Math.Round(mitjaCua / contador, 2).ToString() + " segons" : "0 segons";
+                lbMitjaTrucades.Text = contador > 0 ? (TrucadesAny / contador).ToString("#,##0") : "0";
+                lbTBS.Text = contador > 0 ? Math.Round((tbs / contador) * 1000, 2).ToString() + "  /  1000" : "0";
+                lbDOTS.Text = contador > 0 ? Math.Round((dots / contador) * 1000, 2).ToString() + "  /  1000" : "0";
+                lbDXT.Text = contador > 0 ? Math.Round((dxt / contador) * 1000, 2).ToString() + "  /  1000" : "0";
+
             }
+
+
+            int anyMin = int.Parse(any2[0]);
+            int anyMax = int.Parse(any2[0]);
+
+            foreach (string any4 in any2)
+            {
+                if (anyMin > int.Parse(any4))
+                {
+                    anyMin = int.Parse(any4);
+                }
+                if (anyMax < int.Parse(any4))
+                {
+                    anyMax = int.Parse(any4);
+                }
+            }
+
+            nupAny.Minimum = anyMin;
+            nupAny.Maximum = anyMax;
+
         }
 
         private void chkFiltreDades_CheckedChanged(object sender, EventArgs e)
@@ -222,7 +275,7 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
                         dgDades.Rows.Add(dataTallada, NombreTrucades, TempsTrucades, TempsMigCua, disponibilitatTbs, disponibilitatDots, disponibilitatDxt);
 
                         lbMitjaCua.Text = contador > 0 ? Math.Round(mitjaCua / contador, 2).ToString() + " segons" : "0 segons";
-                        lbMitjaTrucades.Text = contador > 0 ? (TrucadesAny / contador).ToString() : "0";
+                        lbMitjaTrucades.Text = contador > 0 ? (TrucadesAny / contador).ToString("#,##0") : "0";
                         lbTBS.Text = contador > 0 ? Math.Round((tbs / contador) * 1000, 2).ToString() + "  /  1000" : "0";
                         lbDOTS.Text = contador > 0 ? Math.Round((dots / contador) * 1000, 2).ToString() + "  /  1000" : "0";
                         lbDXT.Text = contador > 0 ? Math.Round((dxt / contador) * 1000, 2).ToString() + "  /  1000" : "0";
@@ -251,7 +304,7 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
                         dgDades.Rows.Add(dataTallada, NombreTrucades, TempsTrucades, TempsMigCua, disponibilitatTbs, disponibilitatDots, disponibilitatDxt);
 
                         lbMitjaCua.Text = contador > 0 ? Math.Round(mitjaCua / contador, 2).ToString() + " segons" : "0 segons";
-                        lbMitjaTrucades.Text = contador > 0 ? (TrucadesAny / contador).ToString() : "0";
+                        lbMitjaTrucades.Text = contador > 0 ? (TrucadesAny / contador).ToString("#,##0") : "0";
                         lbTBS.Text = contador > 0 ? Math.Round((tbs / contador) * 1000, 2).ToString() + "  /  1000" : "0";
                         lbDOTS.Text = contador > 0 ? Math.Round((dots / contador) * 1000, 2).ToString() + "  /  1000" : "0";
                         lbDXT.Text = contador > 0 ? Math.Round((dxt / contador) * 1000, 2).ToString() + "  /  1000" : "0";
@@ -315,7 +368,7 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
                         dgDades.Rows.Add(dataTallada, NombreTrucades, TempsTrucades, TempsMigCua, disponibilitatTbs, disponibilitatDots, disponibilitatDxt);
 
                         lbMitjaCua.Text = contador > 0 ? Math.Round(mitjaCua / contador, 2).ToString() + " segons" : "0 segons";
-                        lbMitjaTrucades.Text = contador > 0 ? (TrucadesAny / contador).ToString() : "0";
+                        lbMitjaTrucades.Text = contador > 0 ? (TrucadesAny / contador).ToString("#,##0") : "0";
                         lbTBS.Text = contador > 0 ? Math.Round((tbs / contador) * 1000, 2).ToString() + "  /  1000" : "0";
                         lbDOTS.Text = contador > 0 ? Math.Round((dots / contador) * 1000, 2).ToString() + "  /  1000" : "0";
                         lbDXT.Text = contador > 0 ? Math.Round((dxt / contador) * 1000, 2).ToString() + "  /  1000" : "0";
@@ -344,7 +397,7 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
                         dgDades.Rows.Add(dataTallada, NombreTrucades, TempsTrucades, TempsMigCua, disponibilitatTbs, disponibilitatDots, disponibilitatDxt);
 
                         lbMitjaCua.Text = contador > 0 ? Math.Round(mitjaCua / contador, 2).ToString() + " segons" : "0 segons";
-                        lbMitjaTrucades.Text = contador > 0 ? (TrucadesAny / contador).ToString() : "0";
+                        lbMitjaTrucades.Text = contador > 0 ? (TrucadesAny / contador).ToString("#,##0") : "0";
                         lbTBS.Text = contador > 0 ? Math.Round((tbs / contador) * 1000, 2).ToString() + "  /  1000" : "0";
                         lbDOTS.Text = contador > 0 ? Math.Round((dots / contador) * 1000, 2).ToString() + "  /  1000" : "0";
                         lbDXT.Text = contador > 0 ? Math.Round((dxt / contador) * 1000, 2).ToString() + "  /  1000" : "0";
@@ -397,7 +450,7 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
                     rower.AppendChild(filaXML);
                 }            
                 xDoc.Save("recollida.xml");
-                MessageBox.Show("El archivo 'recollida.xml' se ha generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El archiu 'recollida.xml' se ha generat amb exit.", "Exit", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -425,7 +478,7 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
         {
             if (dgDades.Rows.Count == 0)
             {
-                MessageBox.Show("Falta agregar datos a la tabla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Falta posar dades a la taula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -463,8 +516,17 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
                 mitjDXT.InnerText = lbDXT.Text;
                 root.AppendChild(mitjDXT);
 
-                xDoc.Save("mitjes.xml");
-                MessageBox.Show("El archivo 'any.xml' se ha generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (chkFiltre.Checked)
+                {
+                    xDoc.Save("mitjesALL.xml");
+                    MessageBox.Show("El archiu 'mitjesALL.xml' se ha generat amb éxit.", "Éxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    xDoc.Save("mitjes" + nupAny.Value.ToString() + ".xml");
+                    MessageBox.Show("El archiu 'mitjes" + nupAny.Value.ToString() + ".xml' se ha generat amb éxit.", "Éxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
             }
         }
 
@@ -500,41 +562,17 @@ namespace Consultor_trucades_a_la_xarxa_RESCAT
                 }
             }
             xDoc.Save("any.xml");
-            MessageBox.Show("El archivo 'any.xml' se ha generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("El archiu 'any.xml' se ha generat amb éxit.", "Éxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btGrafic_Click(object sender, EventArgs e)
         {
             if (dgDades.Rows.Count == 0)
             {
-                MessageBox.Show("Falta agregar datos a la tabla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Falta posar dades a la taula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                //List<string> etiquetasX = new List<string>();
-                //List<double> valoresY = new List<double>();
-
-                //XPathDocument document = new XPathDocument(fileName);
-                //XPathNavigator navegador = document.CreateNavigator();
-                //XPathNodeIterator cursor = null;
-                //XPathExpression expr = navegador.Compile("//response/row/row");
-
-
-                //expr.AddSort("row", XmlSortOrder.Ascending, XmlCaseOrder.None, "", XmlDataType.Text);
-                //cursor = navegador.Select(expr);
-                //valoresY.Clear();
-                //foreach (XPathNavigator tut in cursor)
-                //{
-                //    string data = tut.SelectSingleNode("data")?.Value;
-                //    DateTime dataConvert = DateTime.Parse(data);
-                //    string dataTallada = dataConvert.ToString("yyyy");
-
-                //    if (!etiquetasX.Contains(dataTallada))
-                //    {
-                //        etiquetasX.Add(dataTallada);
-                //        valoresY.Add(((double)navegador.Evaluate($"AVG(//data LIKE '{data}%']/temps_mig_en_cua_segons)")));
-                //    }
-                //}
 
                 List<string> etiquetasX = new List<string>();
                 List<double> valoresY = new List<double>();
